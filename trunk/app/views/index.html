@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sabheApp">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>FidioMeet</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="/vendor/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/videogular.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/gridster.css" rel="stylesheet">
+        <link href="/css/layout.css" rel="stylesheet">
+        <link href="/css/chat.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <link rel="stylesheet" href="vendor/jquery/themes/base/jquery.ui.core.css" />
+        <link rel="stylesheet" href="vendor/jquery/themes/base/jquery.ui.resizable.css" />
+
+        <style type="text/css">
+           header {
+            background: #333;
+            color:#555;
+          }
+
+          header .dropdown-menu {
+            top:74px;
+            background: #ffcc33;
+            border-width:0;
+          }
+
+          .carousel-caption {
+            z-index: 10;
+          }
+
+          /* Declare heights because of positioning of img element */
+          #myCarousel  .item {
+            height: 400px;
+            background-color:#bbb;
+          }
+          #myCarousel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 600px;
+          }
+          .logo {
+            font-size:40px;
+            position:absolute;
+            z-index:1200;
+            color:#333;
+            top:70px;
+            text-align:center;
+            width:100%;
+          }
+
+        </style>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  ng-controller="HomeController">
+        
+        <!-- Wrap all page content here -->
+      <div id="wrap">
+  
+      <header >
+
+    <!-- Carousel
+    ================================================== -->
+          <div id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="../img/1.jpg">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h2>Architectural Design</h2>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img src="../img/2.jpg">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h2>Interior Design</h2>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img src="../img/3.jpg">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h2>Renovations &amp; Adaptive Re-use</h2>
+                    <p></p>
+                  </div>
+                </div>
+              </div>       
+            </div><!-- /.carousel-inner -->
+            <div class="logo">SABHE</div> 
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>  
+          </div>
+    <!-- /.carousel -->
+  
+      </header>
+  
+  
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav nav-justified">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#meeting">Meeting</a></li>
+                <li><a href="#services">Services </a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!--/.container -->
+      </div><!--/.navbar -->
+  
+<!-- Begin page content -->
+    <div id="home"></div>
+    <section class="bg-2">
+    <div class="divider"></div>
+        <ng-include src="'/templates/home.html'" class="ng-scope">  
+        </ng-include>
+    </section>
+
+
+    <section class="bg-1" ></section>
+    
+    <div id="meeting"></div>
+    <div class="divider"></div>
+     <!--<ng-include src="'/templates/meeting.html'" class="ng-scope">  
+      </ng-include>-->
+
+       
+    <section class="bg-4" ></section>
+
+    <div id="services"></div>
+    <div class="divider"></div>
+    <ng-include src="'/templates/services.html'" class="ng-scope">  
+      </ng-include>
+
+    <!--/container-->
+      
+    <section class="bg-5" ></section>
+
+    <div id="blog"></div>
+    <div class="divider"></div>
+      <ng-include src="'/templates/blog.html'" class="ng-scope">  
+      </ng-include>
+      <br><br><br><br><br><br>
+
+
+
+
+    <section class="bg-3"></section>
+
+    <div  id="contact"></div>
+    <div class="divider"></div>
+
+
+<h2>Custom Items</h2>
+<p>
+  Each item provides its own dimensions but with custom fields defined using customItemMap: { position: [row, col], size: { x: sizeX, y: sizeY }}
+</p>
+<div gridster="gridsterOpts">
+  <ul>
+    <div gridster-item="customItemMap" ng-repeat="item in customItems">    
+      <li>
+      
+      <videogular vg-player-ready="onPlayerReady" vg-complete="onCompleteVideo" vg-update-time="onUpdateTime" vg-update-size="onUpdateSize" vg-update-volume="onUpdateVolume" vg-update-state="onUpdateState" vg-width="config[item.id].width" vg-height="config[item.id].height" vg-theme="config[item.id].theme.url" vg-autoplay="config[item.id].autoPlay" vg-stretch="config[item.id].stretch.value" vg-responsive="true"><video vg-src="config[item.id].sources" preload="metadata"></video><vg-buffering></vg-buffering><vg-overlay-play vg-play-icon="config[item.id].theme.playIcon"></vg-overlay-play><vg-controls vg-autohide="config[item.id].autoHide" vg-autohide-time="config[item.id].autoHideTime" style="height: 50px;"><vg-play-pause-button vg-play-icon="config[item.id].theme.playIcon" vg-pause-icon="config[item.id].theme.pauseIcon"></vg-play-pause-button><vg-timeDisplay>{{ currentTime }}</vg-timeDisplay><vg-scrubBar><vg-scrubbarcurrenttime></vg-scrubbarcurrenttime></vg-scrubBar><vg-volume><vg-mutebutton vg-volume-level-3-icon="config[item.id].theme.volumeLevel3Icon" vg-volume-level-2-icon="config[item.id].theme.volumeLevel2Icon" vg-volume-level-1-icon="config[item.id].theme.volumeLevel1Icon" vg-volume-level-0-icon="config[item.id].theme.volumeLevel0Icon" vg-mute-icon="config[item.id].theme.muteIcon"></vg-mutebutton><vg-volumebar></vg-volumebar></vg-volume><vg-fullscreenButton vg-enter-full-screen-icon="config[item.id].theme.enterFullScreenIcon" vg-exit-full-screen-icon="config[item.id].theme.exitFullScreenIcon"></vg-fullscreenButton></vg-controls></videogular>
+      
+    </li>
+    </div>
+    
+  </ul>
+</div>
+
+    
+
+    <div class="container">
+      	<div class="col-sm-8 col-sm-offset-2 text-center">
+          <ul class="list-inline center-block">
+            <li><a href="http://facebook.com"><img src="/img/soc_fb.png"></a></li>
+            <li><a href="http://twitter.com"><img src="/img/soc_tw.png"></a></li>
+            <li><a href="http://accounts.google.com/"><img src="/img/soc_gplus.png"></a></li>
+          </ul>
+          
+      	</div><!--/col-->
+    </div><!--/container-->
+      
+    </div><!--/wrap-->
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">Copyright © FidioMeet 2014 v-1.0.1 <a href="https://sabhe.in">fidiomeet.in</a></p>
+      </div>
+    </div>
+
+    <ul class="nav pull-right scroll-top">
+      <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+
+      <script src="vendor/jquery/jquery-1.10.2.js"></script><!-- support older versions of jQuery with different directory structure -->
+      <script src="vendor/jquery/ui/jquery.ui.core.js"></script>
+      <script src="vendor/jquery/ui/jquery.ui.widget.js"></script>
+      <script src="vendor/jquery/ui/jquery.ui.mouse.js"></script>
+      <script src="vendor/jquery/ui/jquery.ui.draggable.js"></script>
+      <script src="vendor/jquery/ui/jquery.ui.resizable.js"></script>
+
+
+      <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="/vendor/font-awesome-4.0.2/css/font-awesome.min.css">
+      <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+      <script type='text/javascript' src="https://maps.gstatic.com/intl/en_us/mapfiles/api-3/16/3/main.js"></script>
+      <script type='text/javascript' src="/vendor/angular/angular.min.js"></script>
+      <script type='text/javascript' src="/vendor/angular/angular-route.min.js"></script>
+      <script type='text/javascript' src="/vendor/angular/angular-sanitize.js"></script>
+      <script type='text/javascript' src="/vendor/angular/ui-bootstrap-tpls-0.10.0.min.js"></script>
+      <script type='text/javascript' src="js/sabheApp.js"></script>
+      <script type='text/javascript' src="js/controllers.js"></script>
+      <script type='text/javascript' src="js/header.js"></script>
+      <script type='text/javascript' src="js/template.js"></script>
+      <script type='text/javascript' src="/vendor/gridster/gridster.js"></script>
+
+
+      <script type='text/javascript' src="/vendor/com/2fdevs/videogular/videogular.js"></script>
+      <script type='text/javascript' src="/vendor/com/2fdevs/videogular/plugins/controls.js"></script>
+      <script type='text/javascript' src="/vendor/com/2fdevs/videogular/plugins/overlay-play.js"></script>
+      <script type='text/javascript' src="/vendor/com/2fdevs/videogular/plugins/buffering.js"></script>
+      <script type='text/javascript' src="/vendor/com/2fdevs/videogular/plugins/poster.js"></script>
+      <script type='text/javascript' src="/vendor/com/2fdevs/videogular/plugins/ima-ads.js"></script>
+
+      <script type='text/javascript' src="/js/sabhe/socket.io.js"></script>
+      <script type='text/javascript' src="/js/sabhe/Events.js"></script>
+      <script type='text/javascript' src="/js/sabhe/FcStack.js"></script>
+      <script type='text/javascript' src="/js/sabhe/ChromeStableStack.js"></script>
+      <script type='text/javascript' src="/js/sabhe/ChromeCanaryStack.js"></script>
+      <script type='text/javascript' src="/js/sabhe/Connection.js"></script>
+      <script type='text/javascript' src="/js/sabhe/FirefoxStack.js"></script>
+      <script type='text/javascript' src="/js/sabhe/Stream.js"></script>
+      <script type='text/javascript' src="/js/sabhe/Room.js"></script>
+      <script type='text/javascript' src="/js/sabhe/L.Logger.js"></script>
+      <script type='text/javascript' src="/js/sabhe/L.Base64.js"></script>
+      <script type='text/javascript' src="/js/sabhe/View.js"></script>
+      <script type='text/javascript' src="/js/sabhe/VideoPlayer.js"></script>
+      <script type='text/javascript' src="/js/sabhe/AudioPlayer.js"></script>
+      <script type='text/javascript' src="/js/sabhe/Bar.js"></script>
+      <script type='text/javascript' src="/js/sabhe/Speaker.js"></script>
+      <script type='text/javascript' src="/js/sabhe/script.js"></script>
+
+
+
+        
+        <!-- JavaScript jQuery code from Bootply.com editor -->
+        
+        
+    </body>
+</html>
