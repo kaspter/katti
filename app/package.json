@@ -1,0 +1,41 @@
+{
+	"name": "sabhe-pps",
+	"version": "1.0.0",
+	"description": "A template for quickly building login systems on top of Node.js & MongoDb",
+	"author": {
+		"name": "Girish",
+		"email": "girish.gkg@gmail.com"
+	},
+	"website":{
+		"url": "sabhe.in"
+	},
+	"repository": {
+		"type": "svn",
+		"url": "https://27.34.247.93/svn/sabhe/trunk/pps"
+	},
+	"private": true,
+	"dependencies": {
+		"express": "*",
+		"stylus": "*",
+		"jade": "*",
+		"mongodb": "*",
+		"moment" : "*",
+		"nodemailer": "*",
+		"log4js" : "*",
+		"mongojs": "*",
+		"svn-spawn": "*",
+		"gzippo": "*",
+		"bunyan":"*",
+		"static-favicon":"*",
+		"compression":"*",
+		"body-parser":"*",
+		"cookie-parser":"*",
+		"cookie-session":"*",
+		"method-override":"*",
+		"errorhandler":"*"
+	},
+	"engines": {
+		"node": "*",
+		"npm":  "*"
+	}
+}
